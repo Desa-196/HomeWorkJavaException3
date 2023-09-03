@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 public class User {
     private String surname;
     private String name;
@@ -47,10 +49,17 @@ public class User {
     public char getGender() {
         return gender;
     }
+    /*
+     * Метод для сохранения данных, для сохранения используем объект реализующий интерфейс DataSaver, благодаря чему в дальнейшем 
+     * можем легко изменить способ хранения данных
+     */
+    public void save(DataSaver dataSaver) throws IOException{
+        dataSaver.saveData(this);
+    }
     
     @Override
     public String toString(){
-        return String.format("%s - %s - %s - %s - %s - %s", surname, name, patronymic, dateOfBirth, telephone, gender);
+        return String.format("%s %s %s %s %s %s", surname, name, patronymic, dateOfBirth, telephone, gender);
     }
 
 
