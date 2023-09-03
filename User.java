@@ -23,4 +23,28 @@ public class User {
         }
     }
 
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public long getTelephone() {
+        return telephone;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
 }

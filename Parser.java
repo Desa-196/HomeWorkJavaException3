@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Parser {
-    public ArrayList parseText(String text){
-        
+    public User parseText(String text){
+
     }
 }
