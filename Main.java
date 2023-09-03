@@ -33,6 +33,12 @@ import java.text.ParseException;
 
 public class Main {
     public static void main(String[] args) {
-        User user = new User("Пономарев", "Денис", "Викторович", "29.10.1985", 89036210703L, 'm');
+        Parser parser = new Parser();
+        try{
+        parser.parseText("Пономарев Денис Викторович 29.10.1985 89036210703 m");
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 }
