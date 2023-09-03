@@ -29,15 +29,12 @@
 пользователь должен увидеть стектрейс ошибки.
  */
 
-import java.text.ParseException;
-
 public class Main {
     public static void main(String[] args) {
         Parser parser = new Parser();
-        try{
-        parser.parseText("Пономарев Денис Викторович 29.10.1985 89036210703 m");
-        }
-        catch(Exception e){
+        try {
+            System.out.println(parser.parseText("Пономарев Денис Викторович 29.10.1985 89036210703 m"));
+        } catch (ParserException | UserException e) {
             System.out.println(e.getMessage());
         }
     }

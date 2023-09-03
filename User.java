@@ -47,5 +47,11 @@ public class User {
     public char getGender() {
         return gender;
     }
+    
+    @Override
+    public String toString(){
+        return String.format("%s - %s - %s - %s - %s - %s", surname, name, patronymic, dateOfBirth, telephone, gender);
+    }
+
 
 }
