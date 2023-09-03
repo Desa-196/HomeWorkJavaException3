@@ -2,6 +2,7 @@ import java.text.ParseException;
 
 public class Parser {
     public User parseText(String text){
+        if(text == null) throw new ParserException("Строка не может быть null!", null);
         String[] array = text.split(" ");
         if(array.length != 6) throw new ParserException("Некорректное количество данных!", null);
         long telephone;
