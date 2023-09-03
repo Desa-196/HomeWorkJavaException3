@@ -30,13 +30,15 @@
  */
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Parser parser = new Parser();
         FileSaver fileSaver = new FileSaver();
-        try {
-            User user = parser.parseText("Пономарев Денис Викторович 29.10.1985 89036210703 m");
+        System.out.println("Введите Фамилию Имя Отчество дату рождения(dd.mm.yyyy) номер телефона пол(m или f), в указанном порядке разделяя их пробелом: ");
+        try(Scanner scanner = new Scanner(System.in, "cp866")) {
+            User user = parser.parseText(scanner.nextLine());
             System.out.println(user);
             user.save(fileSaver);
         } catch (ParserException | UserException e) {
