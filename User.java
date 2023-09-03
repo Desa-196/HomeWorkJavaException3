@@ -3,16 +3,24 @@ public class User {
     private String name;
     private String patronymic;
     private String dateOfBirth;
-    private int telephone;
+    private long telephone;
     private char gender;
 
-    User(String surname, String name, String patronymic, String dateOfBirth, int telephone,char gender){
+    User(String surname, String name, String patronymic, String dateOfBirth, long telephone, char gender) {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
-        this.dateOfBirth = dateOfBirth;
+        if (dateOfBirth.matches("^(\\d{2}).(\\d{2}).(\\d{4})$")) {
+            this.dateOfBirth = dateOfBirth;
+        } else {
+            throw new UserException("Некорректная дата!", null);
+        }
         this.telephone = telephone;
-        this.gender = gender;
+        if (gender == 'f' || gender == 'm') {
+            this.gender = gender;
+        } else {
+            throw new UserException("Некорректный пол!", null);
+        }
     }
 
 }

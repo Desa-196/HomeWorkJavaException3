@@ -28,7 +28,11 @@
 При возникновении проблемы с чтением-записью в файл, исключение должно быть корректно обработано, 
 пользователь должен увидеть стектрейс ошибки.
  */
-public class Main{
+
+import java.text.ParseException;
+
+public class Main {
     public static void main(String[] args) {
+        User user = new User("Пономарев", "Денис", "Викторович", "29.10.1985", 89036210703L, 'm');
     }
 }
